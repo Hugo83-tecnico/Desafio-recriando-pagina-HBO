@@ -1,0 +1,308 @@
+/* Estilização página principal */
+
+@import url("./global.css");
+
+/* Header */
+
+.header {
+    margin-top: 128px !important;
+}
+
+.header__content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+   
+}
+
+.header__channels img{
+    width: 60px;
+    object-fit: contain;
+}
+
+.header__channels{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    gap: 20px;
+    margin-top: 30px;
+    
+}
+
+.header__title{
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 2.0rem;
+}
+
+.header__title-light{
+    font-weight: lighter;
+    font-size: 1.5rem;
+    
+}
+
+.divider{
+    width: 300px;
+    height: 5px;
+    background: var(--divider-bg-color);
+}
+
+.offer{
+    text-align: center;
+    font-size: 1.25rem;
+}
+
+.offer__price{
+    font-family: "Raleway", sans-serif;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.offer__price-small{
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.header__button{
+    color: var(--text-color);
+    border-radius: 500px;
+    padding: 16px 40px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    border: none;
+    cursor: pointer;
+}
+.button__gradient{
+    background: var(--btn-bg-color-gradient);
+    animation-name: wiggle;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    background-size: 250%;
+}
+
+.button__gradient:hover{
+    cursor: pointer;
+    filter: brightness(1.1);
+    animation-play-state: paused;
+}
+
+ .header__content .text__small{
+    max-width: 300px;
+    text-align: center;
+ }
+
+ .text__small{
+    font-size: 1rem;
+    font-weight: 300;
+ }
+
+
+ /* Main */
+
+.subscription{
+    background: url(../images/background-movies-series.png) no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+
+.title{
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.subscription {
+    background: url(../images/background-movies-series.png) no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.subscription__plans{
+    display: flex;
+    flex-direction: column;
+    margin: 40px 0;
+    perspective: 2000px;
+    perspective-origin: top;
+
+}
+
+.subscription__card{
+    display: flex;
+    min-height: 600px;
+    border-radius: 8px;
+    background: var(--card-bg-color);
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 40px;
+}
+
+.subscription__plan{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 1.25rem;
+    margin-bottom: 16px;
+}
+
+.subscription__description{
+    font-size: 1.2rem;
+    text-align: left;
+    list-style: none;
+    margin-bottom: 14px;
+    padding-left: 14px;
+}
+
+.subscription__description::marker{
+    content: "+";
+    margin: 0 8px 0 0;
+}
+
+.subscription__price{
+    font-size: 1.5rem;
+    font-family: "Raleway", sans-serif;
+    color: var(--secondary-color);
+    font-weight: 700;
+}
+
+.text--small {
+    font-size: 1rem;
+    font-weight: 300;
+    color: white;
+}
+
+.button {
+    padding: 16px 40px;
+    background-color: var(--tertiary-color);
+    border-radius: 500px;
+    font-weight: 700;
+    color: var(--text-color);
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 4px;
+    border: none;
+   
+}
+
+.button.button--gradient {
+    background: var(--btn-bg-color-gradient);
+    outline: 3px solid transparent;
+    background-size: 250%;
+}
+
+.button.button--gradient:hover{
+    cursor: pointer;
+    filter: brightness(1.1);
+
+}
+
+.contents__card {
+    width: 75px;
+    margin-top: 30px;
+    border-radius: 16px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border: 2px solid transparent;
+   
+}
+
+.contents__image {
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: opacity 2s;
+
+}
+
+.contents__container {
+    display: grid;
+    grid-template-columns: repeat(3, 40%);
+    grid-template-rows:repeat(3, 40%);
+    align-content: space-between;
+    row-gap: 10px;
+}
+
+
+/* Medias Queries */
+
+@media screen and (min-width: 800px){
+
+    /* Header */
+
+    .header__title{
+        font-size: 3.0rem;
+    }
+    
+    .header__title-light{
+        font-size: 2rem;
+    }
+
+    .divider{
+        max-width: 700px;
+       
+    }
+
+    /* Main */
+
+    .subscription__plans{
+        flex-direction: row;
+        gap: 40px;
+    }
+
+    .contents__container {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        gap:50px
+      
+    }
+
+    .contents__card {
+        width: 150px;
+      
+    }
+    
+
+}
+/* Animations */
+
+@keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+
+/* KeyFrames */
+
+@keyframes wiggle{
+    0%{
+        transform: rotate(0);
+    }
+    15%{
+        transform: rotate(-15deg);
+    }
+    20%{
+        transform: rotate(10deg);
+    }
+    25%{
+        transform: rotate(-10deg);
+    }
+    30%{
+        transform: rotate(10deg);
+    }
+    35%{
+        transform: rotate(-10deg);
+    }
+    40%, 100%{
+        transform: rotate(0);
+    }
+}
